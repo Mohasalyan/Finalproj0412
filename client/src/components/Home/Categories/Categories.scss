@@ -16,7 +16,7 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 50px;
-      @include grid($min: 100px);
+      @include grid($min: 180px);
     }
   }
   &-category {
