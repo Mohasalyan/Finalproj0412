@@ -1,0 +1,117 @@
+@use "./globals.scss" as *;
+@import "@fontsource/montserrat";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: #000 !important;
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input {
+  outline: none;
+  font-family: inherit;
+  &::placeholder {
+    font-family: inherit;
+  }
+}
+li {
+  list-style: none;
+}
+.container {
+  // width: min(1200px, 100%);
+  width: 100%;
+  padding-inline: 15px;
+  margin: auto;
+}
+.page-h {
+  min-height: $page-h;
+}
+.flex-center {
+  @include flex();
+}
+.flex-between {
+  @include flex($jc: space-between);
+}
+.flex-items-center {
+  @include flex($jc: flex-start);
+}
+.dir-row {
+  flex-direction: row;
+}
+.dir-col {
+  flex-direction: column;
+}
+.gap-1 {
+  gap: 0.6rem;
+}
+.gap-2 {
+  gap: 1.1rem;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+.mt-2 {
+  margin-top: 1rem;
+}
+.mt-3 {
+  margin-top: 1.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 1rem;
+}
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+// TAble cell
+.smallTxt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// cursor
+.pointer {
+  cursor: pointer;
+}
+
+// swiper
+.swiper-wrapper {
+  padding-bottom: 40px;
+}
+
+.swiper-pagination-bullet-active {
+  background: $main-color !important;
+}
+// On-hover
+.link {
+  opacity: 1;
+  transition: $normal_speed;
+  &:hover {
+    opacity: 0.8;
+    &.underline {
+      text-decoration: underline;
+    }
+  }
+}
+// width
+.w-100 {
+  width: 100%;
+}
+
+.contain {
+  object-fit: contain !important;
+}

@@ -1,0 +1,48 @@
+.messages {
+  .container {
+    height: 90vh;
+    max-height: 100%;
+    overflow: auto;
+  }
+  &-msg {
+    margin-block: 1rem;
+    background-color: #f1f1f1;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    justify-content: space-between;
+    &-userImg {
+    }
+    &-info {
+      &-username {
+        font-size: 15px;
+        .newMsg {
+          background-color: rgb(231, 22, 22);
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          display: inline-block;
+          margin-inline: 0.5rem;
+          animation: shine 1s linear infinite;
+        }
+      }
+      &-msgContent {
+        font-size: 12px;
+        color: #999;
+      }
+    }
+    &-product {
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

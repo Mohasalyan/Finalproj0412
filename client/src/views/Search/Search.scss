@@ -1,0 +1,61 @@
+@use '../../theme/globals.scss' as *;
+.products {
+  overflow: hidden;
+  padding-bottom: 2rem;
+  &-search {
+    position: relative;
+    padding-top: 5rem;
+    &-bar {
+      @include flex();
+      position: relative;
+      gap: 1rem;
+      background-color: #fff;
+      padding: 1rem;
+      width: 80%;
+      margin: 1rem auto 2rem;
+      border-radius: 2rem;
+      transition: 0.3s ease-out;
+      border: 1px solid #ddd;
+      animation: increase 1s ease;
+      &:hover {
+        border-color: rgba($main_color, 0.9);
+      }
+      @include tablet {
+        width: 100% !important;
+      }
+      &-input {
+        width: 100%;
+        input {
+          color: #555;
+          background-color: transparent;
+          border: none;
+          width: inherit;
+          font-size: 1rem;
+          &::placeholder {
+            color: #ccc;
+          }
+        }
+      }
+      &-icon {
+        @include flex();
+        color: #999;
+        transition: $normal_speed;
+        &:hover{
+            color: #555;
+        }
+      }
+    }
+  }
+}
+
+@keyframes increase {
+  0%{
+    width: 0%;
+  }
+  70%{
+    width: 90%;
+  }
+  100%{
+    width: 80%;
+  }
+}

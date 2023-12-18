@@ -1,0 +1,9 @@
+@use "../../../theme/globals.scss" as *;
+
+.footer {
+    background-color: lighten($main-color,  47%);
+  .container {
+    padding-block: 50px;
+    @include flex();
+  }
+}

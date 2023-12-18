@@ -1,0 +1,42 @@
+.suggests-menu {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%) !important;
+  z-index: 999;
+  background-color: #fff;
+  max-width: 500px;
+  width: 100%;
+  padding: 1rem;
+  box-shadow: 0 10px 10px 10px rgba($color: #555, $alpha: 0.05);
+  transition: 0.2s ease-out;
+    
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition: 0.2s ease-out;
+  top: 80%;
+
+  }
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: 0.2s ease-out;
+    top: 90%;
+  }
+  &-item{
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    font-size: 12px;
+    &:hover{
+        background-color: #f1f1f1;
+
+    }
+  }
+}

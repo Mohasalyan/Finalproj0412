@@ -1,0 +1,85 @@
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+.chat {
+  height: 92vh;
+}
+.chat .container {
+  height: 100%;
+}
+.chat-productInfo {
+  border-bottom: 1px solid #eee;
+  padding-block: 1rem;
+  text-transform: capitalize;
+}
+.chat-productInfo .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.6rem;
+}
+.chat-productInfo-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.chat-messages {
+  width: 100%;
+  max-height: 80%;
+  height: 80%;
+  overflow-y: auto;
+  padding: 1rem;
+}
+.chat-messages-message {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.3rem 2rem;
+  border-radius: 3rem;
+  margin-bottom: 0.5rem;
+}
+.chat-messages-message.myMessage {
+  background-color: #16db65;
+  color: #fff;
+  align-self: flex-start;
+  margin-left: auto;
+}
+.chat-messages-message.message-received {
+  background-color: #eee;
+  align-self: flex-end;
+}
+.chat-controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.chat-controls-input {
+  flex: 1;
+}
+.chat-controls-input input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+.chat-controls-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2rem;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chat-controls-send-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}/*# sourceMappingURL=Chat.css.map */

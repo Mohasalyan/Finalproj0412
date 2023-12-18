@@ -1,0 +1,27 @@
+@use "../../../theme/globals.scss" as *;
+.sectionHeader {
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 40px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right:102%;
+    width: 100px;
+    height: 2px;
+    background-color: $text-color;
+    opacity: .3;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left:102%;
+    width: 100px;
+    height: 2px;
+    background-color: $text-color;
+    opacity: .3;
+  }
+}

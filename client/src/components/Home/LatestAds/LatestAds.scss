@@ -1,0 +1,61 @@
+@use "../../../theme/globals.scss" as *;
+
+.latestAds {
+  padding-block: 2rem;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    &-img {
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+    &-text {
+      //   font-weight: 700;
+      text-transform: capitalize;
+    }
+    &-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-block: 0.5rem;
+      gap: 1rem;
+      &-price {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      &-category {
+        background-color: lighten($main-color, 10%);
+        min-width: fit-content;
+        text-align: center;
+        // padding: 0.5rem 0.7rem;
+        border-radius: 2rem;
+        color: #000;
+        font-size: 12px;
+        @include flex();
+        font-weight: 700;
+      }
+      &-type {
+        background-color: lighten(rgb(199, 30, 30), 10%);
+        min-width: 80px;
+        text-align: center;
+        padding: 0.2rem 0.3rem;
+        border-radius: 2rem;
+        color: #000;
+        font-size: 12px;
+        font-weight: 700;
+        @include flex();
+      }
+      & > div {
+      }
+    }
+  }
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}

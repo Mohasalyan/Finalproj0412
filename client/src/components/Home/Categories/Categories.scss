@@ -1,0 +1,46 @@
+@use "../../../theme/globals.scss" as *;
+
+.categories {
+  padding-block: 2rem;
+  overflow-x: hidden;
+  @include tablet {
+    padding-block: 0.5rem;
+    .sectionHeader {
+      margin-bottom: 10px;
+    }
+  }
+  &.page-h {
+    .container {
+      display: flex;
+      align-content: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 50px;
+      @include grid($min: 180px);
+    }
+  }
+  &-category {
+    @include flex($dir: column);
+
+    transition: $normal-speed;
+    &-img {
+      @include flex();
+      img {
+        width: 100px;
+        @include tablet {
+          width: 80px;
+        }
+      }
+    }
+    &-text {
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+.swiper-wrapper {
+  padding-bottom: 40px;
+}

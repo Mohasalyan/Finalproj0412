@@ -1,0 +1,21 @@
+.logo {
+    div {
+      position: relative;
+      width: fit-content;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 55%;
+        left: 110%;
+        background-color: #000;
+        border-radius: 20%;
+        width: 30px;
+        height: 1px;
+      }
+    }
+    span {
+      display: block;
+      transform: translateX(10px);
+      font-weight: 500;
+    }
+  }

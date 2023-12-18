@@ -1,0 +1,63 @@
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+.latestAds {
+  padding-block: 2rem;
+}
+.latestAds-item-img img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+}
+.latestAds-item-text {
+  text-transform: capitalize;
+}
+.latestAds-item-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-block: 0.5rem;
+  gap: 1rem;
+}
+.latestAds-item-box-price {
+  font-size: 20px;
+  font-weight: 700;
+}
+.latestAds-item-box-category {
+  background-color: #39eb80;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  text-align: center;
+  border-radius: 2rem;
+  color: #000;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-weight: 700;
+}
+.latestAds-item-box-type {
+  background-color: #e13737;
+  min-width: 80px;
+  text-align: center;
+  padding: 0.2rem 0.3rem;
+  border-radius: 2rem;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}/*# sourceMappingURL=LatestAds.css.map */

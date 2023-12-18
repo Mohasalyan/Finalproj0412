@@ -1,0 +1,90 @@
+$main_color: #16db65;
+$main_color_darken: #081c15;
+$main_color_lighten: #9ef01a;
+$text_color: #3d434a;
+$gray_color: #e5e5e5;
+
+// roles
+$role_superadmin: hsl(14, 100%, 76%);
+$role_editor: #4caf50;
+$role_viewer: #2196f3;
+
+// Shadows
+$main-shadow: 0 0 40px rgba(8, 21, 66, 0.05);
+$shadow-1: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+$shadow-2: inset 21px 21px 19px #181a1d, inset -21px -21px 19px #202225;
+
+// Spacing
+$main_mb: 4rem;
+
+$page-h: 92vh;
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+// Padding
+$main_sec_padding: 5rem;
+
+// Transitions
+$normal_speed: 0.3s ease;
+
+@mixin gradBorder($deg: 55deg) {
+  border: 1px solid;
+  border-image-source: linear-gradient(189deg, #aaa9a9, transparent, #858585);
+  border-image-slice: 10;
+  transition: 0.3s ease-out;
+  animation: move 10s ease infinite;
+}
+// ------------- mixins -------------
+@mixin flex($jc: center, $ai: center, $dir: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $dir;
+}
+
+@mixin grid($min: 300px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+}
+// ------------- Media -------------
+@mixin xLarge {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin large {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@keyframes move {
+  0% {
+    border-image-source: linear-gradient(
+      100deg,
+      #ddd,
+      transparent,
+      transparent
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(10deg, transparent, transparent, #ccc);
+  }
+  100% {
+    border-image-source: linear-gradient(100deg, #ddd, transparent, #eee);
+  }
+}

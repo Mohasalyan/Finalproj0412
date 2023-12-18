@@ -1,0 +1,73 @@
+@use "../../../theme/globals.scss" as *;
+.banner {
+  // height: 91vh;
+  margin-inline: 1rem;
+  padding-block: 3rem !important;
+  margin-inline: 5rem;
+  // padding-bottom: 1rem;
+  // border: 1px solid #f1f1f1;
+  @include gradBorder();
+  border-radius: 1rem;
+  @include tablet{
+    padding-block: 0px !important;
+}
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    @include tablet{
+        // margin-top: 5rem;
+    }
+  }
+  &-textSide {
+    flex: 10;
+    text-align: center;
+    @include flex($dir: column, $jc: flex-start);
+    font-weight: bold;
+    @include tablet {
+      //   @include flex($dir: column);
+      font-size: 10px;
+      padding-bottom: .5rem;
+      span {
+        font-size: 30px !important;
+      }
+    }
+    span {
+      color: $main-color;
+      font-size: 50px;
+      font-weight: 700;
+    }
+  }
+  &-imgsSide {
+    // background-color: $main-color;
+    display: flex;
+    flex: 2;
+    // padding: 1rem;
+
+    &-img {
+      img {
+        width: 200px;
+        height: 200px;
+        @include tablet {
+          width: 100px;
+          height: 100px;
+        }
+      }
+      &.arrow {
+        animation: zig 3s ease-in infinite;
+      }
+    }
+  }
+}
+@keyframes zig {
+  0% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,32 @@
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+.sectionHeader {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+.sectionHeader::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 102%;
+  width: 100px;
+  height: 2px;
+  background-color: #3D434A;
+  opacity: 0.3;
+}
+.sectionHeader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 102%;
+  width: 100px;
+  height: 2px;
+  background-color: #3D434A;
+  opacity: 0.3;
+}/*# sourceMappingURL=SectionHeader.css.map */

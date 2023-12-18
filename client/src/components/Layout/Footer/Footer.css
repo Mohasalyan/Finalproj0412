@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+.footer {
+  background-color: #e4fcee;
+}
+.footer .container {
+  padding-block: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}/*# sourceMappingURL=Footer.css.map */
