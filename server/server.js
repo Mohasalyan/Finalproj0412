@@ -25,7 +25,7 @@ connectToDB();
 
 // Middlewares
 app.use(express.json());
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(cors({ origin: "*" })); // Allow requests from any origin
 app.use(helmet()); // Enhance security by setting various HTTP headers
 // Add a custom Cross-Origin-Resource-Policy header
 app.use((req, res, next) => {
