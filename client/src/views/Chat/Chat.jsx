@@ -105,7 +105,7 @@ function Chat() {
     <Loading />
   ) : (
     <Grid container className="chat page-h">
-      <Grid item xs={12} md={4} className="chat-productInfo">
+      <div className="chat-productInfo">
         <div className="container">
           <Stack
             direction="row"
@@ -137,17 +137,15 @@ function Chat() {
           </div>
           <Stack>
             <div className="chat-productInfo-name">
-              {" "}
-              {otherParticipant?.fullName}{" "}
+              {otherParticipant?.fullName}
             </div>
             <Typography sx={{ fontSize: 10 }}>
-              {" "}
-              {otherParticipant?.role}{" "}
+              {otherParticipant?.role}
             </Typography>
           </Stack>
         </div>
-      </Grid>
-      <Grid item xs={12} md={8} className="container">
+      </div>
+      <div className="container">
         <div className="chat-messages">
           {chatDetails?.messages.length < 1 ? (
             <NoDataMsg msg={"No messages yet!"} />
@@ -192,7 +190,7 @@ function Chat() {
             </Button>
           </div>
         </div>
-      </Grid>
+      </div>
     </Grid>
   );
 }

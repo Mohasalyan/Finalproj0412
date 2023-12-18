@@ -13,7 +13,6 @@ import {
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { setProduct } from "@store/seller/sellerSlice";
-import Loading from "@components/Common/Loading/Loading";
 import SmallTitle from "@seller/components/Common/SmallTitle/SmallTitle";
 import UniSelect from "@components/common/UniSelect/UniSelect";
 import UniEditor from "@seller/components/Common/Editor/Editor";

@@ -9,7 +9,6 @@ import { API_URL } from "@src/constants";
 import dayjs from "dayjs";
 import SmallTitle from "@seller/components/Common/SmallTitle/SmallTitle";
 import { useDispatch, useSelector } from "react-redux";
-import NoDataMsg from "@components/common/NoDataMsg/NoDataMsg";
 import { useMarkAsSeenMutation } from "@store/notifications/notificationsApiSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { setAddNotification } from "@store/notifications/notificationsSlice";

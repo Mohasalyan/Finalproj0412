@@ -19,7 +19,7 @@ export default defineConfig({
     port: 5001,
     proxy: {
       "/api": {
-        target: "http://localhost:5000",
+        target: "https://swap-moq.onrender.com",
         changeOrigin: true,
       },
     },

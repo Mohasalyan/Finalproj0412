@@ -1,8 +1,8 @@
 import { useEffect, Suspense, lazy } from "react";
-import RequireAuth from "@components/Common/RequireAuth/RequireAuth";
+import RequireAuth from "@components/common/RequireAuth/RequireAuth";
 import Layout from "@components/Layout/Layout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Loading from "@components/Common/Loading/Loading";
+import Loading from "@components/common/Loading/Loading";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useSelector } from "react-redux";

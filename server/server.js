@@ -46,7 +46,7 @@ app.use((err, rea, res, next) => {
   return res.status(errorStatus).json(errorMessage);
 });
 
-WS.attach(httpServer)
+WS.attach(httpServer);
 
 // Create admin user if not exist
 createAdminUserIfNotExist();
