@@ -22,7 +22,7 @@ const createError = require("./utils/createError");
 const mongoose = require("mongoose");  // Correct import
 
 const WS = new Server({
-  cors: { origin: "http://localhost:5001" },
+  //cors: { origin: "http://localhost:5001" },
   path: "/ws",
 });
 
