@@ -15,6 +15,7 @@ import NoDataMsg from "@components/common/NoDataMsg/NoDataMsg";
 import { API_URL } from "@src/constants";
 import dayjs from "dayjs";
 import Loading from "@components/common/Loading/Loading";
+import { toast } from "react-toastify";
 
 function Chat() {
   const dispatch = useDispatch();
@@ -99,6 +100,11 @@ function Chat() {
     scrollToBottom();
   }, [chatDetails]);
   useEffect(() => {
+    if (isErrorSendMsg) {
+      toast.error(errorSendMsg.data);
+    }
+  }, [isErrorSendMsg]);
+  useEffect(() => {
     refetch();
   }, []);
   return isLoading ? (
@@ -106,7 +112,7 @@ function Chat() {
   ) : (
     <Grid container className="chat page-h" spacing={4}>
       <Grid item xs={12} md={4}>
-        <Stack>
+        <Stack sx={{ maxHeight: "300px", overflowY: "hidden" }}>
           <img
             src={`${API_URL}/${chatDetails?.product?.image}`}
             alt="product"
@@ -114,10 +120,12 @@ function Chat() {
               borderRadius: 20,
               margin: "10px",
               borderTopLeftRadius: 35,
+              maxHeight: "300px",
+              objectFit: "contain",
             }}
           />
         </Stack>
-        <Box component={"div"} sx={{ py: 2, px: 2 }}>
+        <Box component={"div"} sx={{ py: 2, px: 4 }}>
           <Typography
             sx={{
               fontWeight: 600,
@@ -174,31 +182,7 @@ function Chat() {
       </Grid>
       <Grid item xs={12} md={8}>
         <div className="chat-productInfo">
-          <div className="container">
-            {/* <Stack
-              direction="row"
-              sx={{
-                border: "1px solid #000",
-                p: "10px 20px",
-                mb: 4,
-                borderRadius: 20,
-                mx: "auto",
-              }}>
-              This Chat is related to product
-              <Typography
-                className="link underline"
-                sx={{ ml: 2, fontWeight: 600, cursor: "pointer" }}>
-                <Link
-                  to={
-                    user.role === "seller"
-                      ? `/seller/products/${chatDetails?.product?._id}`
-                      : `/products/${chatDetails?.product?._id}`
-                  }>
-                  {chatDetails?.product?.name}
-                </Link>
-              </Typography>
-            </Stack> */}
-          </div>
+          <div className="container"></div>
           <div className="container">
             <div className="chat-productInfo-img">
               <Avatar src={`${API_URL}/${otherParticipant?.photo}`} />

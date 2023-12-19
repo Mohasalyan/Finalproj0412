@@ -1,7 +1,4 @@
-const mongoose = require("mongoose");
-const createError = require("./createError");
 const Notification = require("../models/Notifications");
-const User = require("../models/User");
 
 const sendNotificationToUser = async ({
   type,

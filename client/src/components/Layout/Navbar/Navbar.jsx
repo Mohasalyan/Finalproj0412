@@ -6,17 +6,19 @@ import "../Layout.scss";
 import UserInfo from "./UserInfo";
 import { IconButton, useMediaQuery } from "@mui/material";
 import Logo from "../Logo/Logo";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import NotificationsMenu from "./NotificationsMenu";
 import { MED_SCREEN, SMALL_SCREEN } from "@src/constants";
 import { Close, Menu } from "@mui/icons-material";
 import { useState } from "react";
+import { logOut } from "@store/auth/authSlice";
 
 function Navbar() {
   const location = useLocation();
+  const dispatch = useDispatch();
   const { user, token } = useSelector((state) => state.auth);
   const links = user?.role !== "seller" ? userLinks : adminLinks;
-  const { myChats, newMsgs } = useSelector((state) => state.chat);
+  const { myChats, newMsgs,newMsg } = useSelector((state) => state.chat);
   let init = 100;
   const isSmallScreen = useMediaQuery(`(${MED_SCREEN})`);
   const [show, setShow] = useState(false);
@@ -47,6 +49,17 @@ function Navbar() {
               </Link>
             );
           })}
+          {isSmallScreen && token ? (
+            <div
+              className={`navbar-links-link pointer`}
+              // data-aos="fade-down"
+              data-aos-delay={init || 100}
+              onClick={() => dispatch(logOut())}>
+              logout
+            </div>
+          ) : (
+            <></>
+          )}
           {!token && (
             <Link
               to={"login"}
@@ -71,7 +84,7 @@ function Navbar() {
                 sx={{ ml: 2, borderRadius: ".5rem", gap: 2 }}>
                 <Link to="/messages" className="navbar-box-messages icon">
                   <MsgsIcon sx={{ fontSize: 30 }} />
-                  {newMsgs > 0 && <div className="count"> {newMsgs} </div>}
+                  {newMsg && <div className="count"> {newMsg} </div>}
                 </Link>
               </IconButton>
             </div>

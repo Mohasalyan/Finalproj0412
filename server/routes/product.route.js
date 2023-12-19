@@ -26,17 +26,17 @@ productRouter.get(
   productController.getMyProducts
 );
 
-productRouter.get("/:id", productController.getProductByIdForGuest);
-productRouter.get(
-  "/:id/:userId",
-  productController.getProductById
-);
-
 productRouter.get(
   "/:id/match-request",
   Authinticate(),
   productController.sendMatchRequest
 );
+productRouter.get(
+  "/:id/:userId",
+  productController.getProductById
+);
+productRouter.get("/:id", productController.getProductByIdForGuest);
+
 
 productRouter.patch(
   "/:productId/match-requests/:requestId",

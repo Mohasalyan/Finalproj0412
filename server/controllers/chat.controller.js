@@ -97,7 +97,7 @@ const getChats = async (req, res, next) => {
   }
 };
 
-const sendMessage = async (req, res) => {
+const sendMessage = async (req, res,next) => {
   try {
     const { chatId } = req.params;
     const { text } = req.body;

@@ -61,3 +61,38 @@
 .text-right {
   text-align: right;
 }
+
+.swiper {
+  padding-top: 50px;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  left: unset;
+  top: 10px;
+  transition: $normal_speed;
+  &:hover{
+    &::after{
+      color: rgba($main-color, 1);
+    }
+  }
+  &::after{
+    font-size: 10px;
+    font-weight: 900;
+    color: rgba($main-color, .7);
+    transition: $normal_speed;
+    background-color: #f1f1f1;
+    margin-top: 10px;
+    border-radius: 10%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+.swiper-button-prev{
+  right: 60px;
+
+}
+.swiper-button-next{
+  right: 20px;
+
+}

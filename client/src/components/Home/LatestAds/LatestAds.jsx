@@ -7,7 +7,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import { Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Keyboard } from "swiper/modules";
 import "./LatestAds.scss";
 import SectionHeader from "@components/common/SectionHeader/SectionHeader";
 import { Link } from "react-router-dom";
@@ -43,8 +43,7 @@ function LatestAds() {
     // spaceBetween: 30,
     centeredSlides: false,
     slidesPerGroup: 1,
-    pagination: { clickable: true },
-    modules: [Pagination, Autoplay],
+    modules: [Keyboard, Autoplay, Navigation],
     autoplay: {
       delay: 20000,
       disableOnInteraction: false,
@@ -54,6 +53,10 @@ function LatestAds() {
       400: {
         slidesPerView: 1,
         spaceBetween: 5,
+      },
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
       // when window width is >= 768px
       768: {
@@ -65,7 +68,6 @@ function LatestAds() {
         spaceBetween: 35,
       },
     },
-    loop: true,
   };
   return isLoading
     ? ""
@@ -74,7 +76,7 @@ function LatestAds() {
           <div className="container">
             <SectionHeader title="LatestAds" />
             {latestProducts.length > 0 ? (
-              <Swiper {...params}>
+              <Swiper {...params} navigation={true}>
                 {latestProducts?.map((item, i) => {
                   init += 200;
                   return (

@@ -6,18 +6,20 @@
   margin-inline: 5rem;
   // padding-bottom: 1rem;
   // border: 1px solid #f1f1f1;
-  @include gradBorder();
   border-radius: 1rem;
-  @include tablet{
+  @include upToTablet {
+    @include gradBorder();
+  }
+  @include tablet {
     padding-block: 0px !important;
-}
+  }
   .container {
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100%;
-    @include tablet{
-        // margin-top: 5rem;
+    @include tablet {
+      // margin-top: 5rem;
     }
   }
   &-textSide {
@@ -28,7 +30,7 @@
     @include tablet {
       //   @include flex($dir: column);
       font-size: 10px;
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
       span {
         font-size: 30px !important;
       }

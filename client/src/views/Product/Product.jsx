@@ -156,6 +156,14 @@ function Product() {
                 <Button variant="outlined" size="small" disabled>
                   send match request
                 </Button>
+                {productDetails?.status === "used" && (
+                  <Typography
+                    sx={{ fontSize: 12, fontWeight: 600, color: red[700] }}
+                    className="flex-items-center">
+                    <WarningAmberIcon sx={{ fontSize: 12, mr: 2 }} />
+                    this product is used
+                  </Typography>
+                )}
                 {productDetails?.status === "new" && (
                   <Typography
                     sx={{ fontSize: 12, fontWeight: 600, color: red[700] }}

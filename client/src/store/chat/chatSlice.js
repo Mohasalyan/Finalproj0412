@@ -7,8 +7,12 @@ const chatSlice = createSlice({
     chatDetails: null,
     myChats: null,
     newMsgs: 0,
+    newMsg: false,
   },
   reducers: {
+    resetNewMsg: (state, { payload }) => {
+      state.newMsg = false;
+    },
     setChat: (state, { payload }) => {
       state.chatDetails = payload;
     },
@@ -20,8 +24,12 @@ const chatSlice = createSlice({
     setChatMessage: (state, { payload }) => {
       state.chatDetails?.messages?.push(payload);
     },
+    setNewMessage: (state, { payload }) => {
+      state.newMsg = true;
+    },
   },
 });
 
-export const { setChat, setChatMessage, setMyChats } = chatSlice.actions;
+export const { resetNewMsg, setChat, setChatMessage, setMyChats, setNewMessage } =
+  chatSlice.actions;
 export default chatSlice.reducer;

@@ -1,7 +1,7 @@
 import { Avatar, Typography } from "@mui/material";
 import { API_URL } from "@src/constants";
 import { useGetMyChatsQuery } from "@store/chat/chatApiSlice";
-import { setMyChats } from "@store/chat/chatSlice";
+import { resetNewMsg, setMyChats } from "@store/chat/chatSlice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -33,6 +33,9 @@ function Messages() {
   useEffect(() => {
     refetch();
   }, []);
+  useEffect(() => {
+    dispatch(resetNewMsg());
+  }, []);
 
   return isLoading ? (
     <Loading />
@@ -58,15 +61,24 @@ function Messages() {
                 <div className="messages-msg-info">
                   <div className="messages-msg-info-username">
                     {sender.username}
-                    {item.isNewMsg && <span className="newMsg"></span>}
+                    {item.isNewMsg &&
+                    item.messages?.at(-1)?.sender !== user._id ? (
+                      <span className="newMsg"></span>
+                    ) : (
+                      <></>
+                    )}
                   </div>
                   <div className="messages-msg-info-msgContent">
                     {lastMsg?.text}
                   </div>
                 </div>
               </div>
-              <Typography sx={{fontSize:12}} className="messages-msg-product">
-                <Typography sx={{fontSize:8,fontWeight:600}}>Product:</Typography>
+              <Typography
+                sx={{ fontSize: 12 }}
+                className="messages-msg-product">
+                <Typography sx={{ fontSize: 8, fontWeight: 600 }}>
+                  Product:
+                </Typography>
                 {item?.product?.name}
               </Typography>
             </Link>
