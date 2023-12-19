@@ -4,7 +4,14 @@ import { userLinks, adminLinks } from "../Navbar/links";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 import { Box, IconButton, Stack } from "@mui/material";
-import { Facebook, Instagram, Telegram, WhatsApp } from "@mui/icons-material";
+import {
+  Facebook,
+  Instagram,
+  Telegram,
+  WhatsApp,
+  SupportAgent,
+} from "@mui/icons-material";
+
 function Footer() {
   const { user, token } = useSelector((state) => state.auth);
   const links = user?.role !== "seller" ? userLinks : adminLinks;
@@ -41,6 +48,9 @@ function Footer() {
             </IconButton>
             <IconButton>
               <Telegram />
+            </IconButton>
+            <IconButton>
+              <SupportAgent />
             </IconButton>
           </Stack>
         </Box>
