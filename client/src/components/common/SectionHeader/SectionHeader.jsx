@@ -11,6 +11,7 @@ function SectionHeader({ title }) {
         textAlign: "center",
         fontSize: isSmallScreen ? 20 : 50,
         fontWeight: 200,
+        marginInline: "auto !important",
       }}>
       {title}
     </Typography>

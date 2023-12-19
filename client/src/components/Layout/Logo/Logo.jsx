@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
+import logo from "@assets/logo.png";
 import "./Logo.scss";
+import { Box } from "@mui/material";
 function Logo() {
   return (
-    <div className="logo">
+    <Box
+      component={"div"}
+      className="logo"
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
       <Link to={"/"}>
-        <div>Swap</div> <span> Moqaida </span>
+        <img src={logo} alt="logo" width={50} />
       </Link>
-    </div>
+    </Box>
   );
 }
 

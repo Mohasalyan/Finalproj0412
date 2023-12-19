@@ -59,7 +59,7 @@
         &-show {
           position: fixed;
           top: 0;
-          background-color: rgba(#fff,  .8);
+          background-color: rgba(#fff, 0.8);
           backdrop-filter: blur(5px);
           width: 100%;
           height: 100vh;
@@ -91,7 +91,7 @@
         }
         .count {
           background-color: rgb(223, 16, 16);
-          font-size: 8px;
+          font-size: 10px;
           padding: 0.2rem;
           border-radius: 50%;
           position: absolute;
@@ -100,7 +100,7 @@
           color: #fff;
           font-weight: bold;
         }
-        .dot{
+        .dot {
           background-color: rgb(223, 16, 16);
           font-size: 8px;
           padding: 0.2rem;

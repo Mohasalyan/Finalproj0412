@@ -136,10 +136,42 @@ const getMyProducts = async (req, res, next) => {
   }
 };
 
+const getProductByIdForGuest = async (req, res, next) => {
+  try {
+    const productId = req.params.id;
+    const product = await Product.findById(productId);
+
+    if (!product) {
+      return next(createError("Product not found.", 404));
+    }
+
+    await product.populate("user");
+    await product.populate("category");
+    const productRes = {
+      _id: product._id,
+      name: product.name,
+      status: product.status,
+      price: product.price,
+      color: product.color,
+      category: product.category,
+      user: product.user,
+      option: product.option,
+      tips: product.tips,
+      matchRequests: [],
+      image: product.image,
+      isChatEnabled: false,
+    };
+
+    res.status(200).json(productRes);
+  } catch (error) {
+    next(error);
+  }
+};
+
 const getProductById = async (req, res, next) => {
   try {
     const productId = req.params.id;
-    const userId = req.user._id;
+    const userId = req.params.userId;
     const product = await Product.findById(productId);
 
     if (!product) {
@@ -395,6 +427,7 @@ module.exports = {
   getMatchRequestsBySeller,
   getAllProductNames,
   getMostRequestedProducts,
+  getProductByIdForGuest,
   // For development
   deleteProducts,
 };

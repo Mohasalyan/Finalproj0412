@@ -15,8 +15,8 @@ import { useState } from "react";
 function Navbar() {
   const location = useLocation();
   const { user, token } = useSelector((state) => state.auth);
-  const { myChats, newMsgs } = useSelector((state) => state.chat);
   const links = user?.role !== "seller" ? userLinks : adminLinks;
+  const { myChats, newMsgs } = useSelector((state) => state.chat);
   let init = 100;
   const isSmallScreen = useMediaQuery(`(${MED_SCREEN})`);
   const [show, setShow] = useState(false);
@@ -71,7 +71,7 @@ function Navbar() {
                 size="small"
                 sx={{ ml: 2, borderRadius: ".5rem", gap: 2 }}>
                 <Link to="/messages" className="navbar-box-messages icon">
-                  <MsgsIcon sx={{ fontSize: 20 }} />
+                  <MsgsIcon sx={{ fontSize: 30 }} />
                   {newMsgs > 0 && <div className="count"> {newMsgs} </div>}
                 </Link>
               </IconButton>

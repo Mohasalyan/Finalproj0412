@@ -106,7 +106,7 @@ export default function NotificationsMenu() {
         sx={{ ml: 2, borderRadius: ".5rem", gap: 2 }}
         onClick={handleClick}>
         <div className="navbar-box-notification icon">
-          <NotificationIcon sx={{ fontSize: 20 }} />
+          <NotificationIcon sx={{ fontSize: 30 }} />
           {myNotifications?.length > 0 && (
             <div className="count">{myNotifications?.length}</div>
           )}

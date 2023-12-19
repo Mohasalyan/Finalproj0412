@@ -45,12 +45,12 @@ function UserInfo() {
                   : avatar
               }
               alt="avatar"
-              width={40}
-              height={40}
+              width={50}
+              height={50}
               style={{ objectFit: "contain" }}
             />
             <div className="topNav-userInfo-name">
-              <Typography fontSize={10} fontWeight={500} noWrap>
+              <Typography fontSize={15} fontWeight={500} noWrap>
                 {profile?.fullName}
               </Typography>
             </div>

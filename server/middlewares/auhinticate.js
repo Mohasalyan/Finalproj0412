@@ -8,7 +8,6 @@ const Authenticate =
     try {
       const auth_token = req.get("Authorization");
 
-      // If allowGuest is true and no token is present, call next()
       if (!auth_token && allowGuest) {
         return next();
       }

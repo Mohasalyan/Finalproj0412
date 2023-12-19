@@ -10,7 +10,10 @@ productRouter.post("/", Authinticate(), productController.createProduct);
 
 productRouter.get("/", productController.getProducts);
 productRouter.get("/names", productController.getAllProductNames);
-productRouter.get("/most-requested/:sellerId", productController.getMostRequestedProducts);
+productRouter.get(
+  "/most-requested/:sellerId",
+  productController.getMostRequestedProducts
+);
 
 productRouter.get(
   "/my-products/match-requests",
@@ -23,9 +26,9 @@ productRouter.get(
   productController.getMyProducts
 );
 
+productRouter.get("/:id", productController.getProductByIdForGuest);
 productRouter.get(
-  "/:id",
-  Authinticate(false, true),
+  "/:id/:userId",
   productController.getProductById
 );
 

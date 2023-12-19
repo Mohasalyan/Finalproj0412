@@ -21,7 +21,7 @@ function Product() {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const { token } = useSelector((state) => state.auth);
+  const { token, user } = useSelector((state) => state.auth);
   const { productDetails } = useSelector((state) => state.products);
   const [openRatingModal, setOpenRatingModal] = useState(false);
   const {
@@ -31,7 +31,9 @@ function Product() {
     error,
     isSuccess,
     refetch,
-  } = useGetProductQuery({ token, params: { productId: id } });
+  } = useGetProductQuery({
+    params: { productId: id, userId: user?._id },
+  });
 
   const [
     sendMatchReq,

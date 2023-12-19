@@ -33,11 +33,10 @@ export const productApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     getProduct: builder.query({
-      query: ({ token, params }) => ({
-        url: `${PRODUCTS_URL}/${params.productId}`,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+      query: ({ params }) => ({
+        url: `${PRODUCTS_URL}/${params.productId}${
+          params.userId ? `/${params.userId}` : ""
+        }`,
       }),
     }),
     createProduct: builder.mutation({
