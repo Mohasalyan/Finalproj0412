@@ -62,7 +62,7 @@ const login = CatchAsyncError(async (req, res) => {
 const myProfile = CatchAsyncError(async (req, res, next) => {
   const { _id } = req.user;
   try {
-    const user = await User.findById(_id);
+    const user = await User.findById(_id).populate("reviews.user");
     if (!user) {
       return next(createError("user not found!"));
     }
@@ -162,7 +162,7 @@ const getTopRatedUsers = CatchAsyncError(async (req, res) => {
   try {
     const topRatedUsers = await User.aggregate([
       {
-        $match: { sellerRating: { $gte: 4 } },
+        $match: { sellerRating: { $gte: 3 } },
       },
       {
         $lookup: {
