@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 
 import { Pagination, Autoplay } from "swiper/modules";
 import "../../components/Home/LatestAds/LatestAds.scss";
-import SectionHeader from "@components/common/SectionHeader/SectionHeader";
 import { Link, useLocation } from "react-router-dom";
 import { useGetProductsQuery } from "@store/Products/productsApiSlice";
 import { setAllProducts, setProducts } from "@store/Products/productSlice";

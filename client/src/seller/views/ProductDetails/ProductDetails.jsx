@@ -10,7 +10,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import '../CreateProduct/style.scss'
+import "../CreateProduct/style.scss";
 
 function ProductDetails() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function ProductDetails() {
     error: productError,
     refetch,
   } = useGetProductQuery({ token, params: { productId: id } });
-  
+
   useEffect(() => {
     refetch();
   }, []);
@@ -50,8 +50,10 @@ function ProductDetails() {
       dispatch(setProduct(productData));
     }
   }, [isError, isSuccess, productData, productSuccess]);
-  
-  return (
+
+  return productLoading ? (
+    <Loading />
+  ) : (
     <div className="updateProduct page-h">
       <div className="container">
         <Paper sx={{ py: 4 }}>
