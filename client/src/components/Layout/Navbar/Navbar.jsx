@@ -33,7 +33,6 @@ function Navbar() {
           }>
           {links.map((item, i) => {
             init += 250;
-            console.log(location.pathname === item.link);
             return (
               <Link
                 key={i}

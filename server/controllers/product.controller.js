@@ -181,7 +181,6 @@ const getProductById = async (req, res, next) => {
     const userMatchRequest = product.matchRequests.find(
       (request) => request.sender.toString() === userId.toString()
     );
-    console.log(userMatchRequest, userId);
     const isChatEnabled =
       userMatchRequest && userMatchRequest.status === "accepted";
 
@@ -268,8 +267,6 @@ const sendMatchRequest = async (req, res, next) => {
     if (!product) {
       return next(createError("Product not found.", 404));
     }
-    console.log(product.name);
-    console.log(product.user, req.user._id);
     if (product.user.toString() === req.user._id.toString()) {
       return next(
         createError("Cannot send match request to own product.", 400)

@@ -54,7 +54,6 @@ export default function Suggests({
     } else {
       setFilteredProductNames([]);
     }
-    console.log({ filteredProductNames });
   };
 
   const handleInputFocus = () => {

@@ -121,7 +121,6 @@ const sendMessage = async (req, res) => {
     const participants = chat.participants.map((participant) =>
       String(participant)
     );
-    console.log({ participants });
     WS.of("/clients").sockets.forEach((socket) => {
       if (participants.includes(socket.user.id)) {
         socket.emit("newMessage", {

@@ -16,7 +16,6 @@ function Footer() {
           <Logo />
           <Stack direction={"row"} spacing={2}>
             {links.map((item, i) => {
-              console.log(location.pathname === item.link);
               return (
                 <Link
                   key={i}

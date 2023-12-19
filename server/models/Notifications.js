@@ -48,7 +48,6 @@ notificationSchema.post("save", async function (notification, next) {
       const recipient = notification.recipient;
       WS.of("/clients").sockets.forEach((socket) => {
         if (recipient.toString() === socket.user.id) {
-          console.log("ids:--", recipient.toString(), socket.user.id);
           socket.emit("notification", notification);
         }
       });

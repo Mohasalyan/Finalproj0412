@@ -47,9 +47,7 @@ function Home() {
     },
   ] = useUpdateProductMutation();
 
-  const cancelHandler = (item) => {
-    console.log(item);
-  };
+  const cancelHandler = (item) => {};
 
   const {
     data: productsData,
